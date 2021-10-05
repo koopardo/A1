@@ -28,6 +28,8 @@ restaDigitos :: Int -> Int
 restaDigitos n = (-1)*sumaDigitos n
 
 -- dado un numero n, sumos los digitos, variando su signo. El primero es positivo, el segundo negativo y asi --
+-- y empezando por el digito de las unidades. --
+
 sumados :: Int -> Int
 sumados n | n > 0 && n < 10 = n
           | n >= 10 = mod n 10 - sumados (div (n-1) 10)
