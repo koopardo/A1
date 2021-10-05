@@ -27,13 +27,13 @@ sumaDigitos n | n > 0 && n < 10 = n
 restaDigitos :: Int -> Int
 restaDigitos n = (-1)*sumaDigitos n
 
--- dado un numero n, sumos los digitos, variando su signo. El primero es positivo, el segundo negativo y asi --
+-- SumaAlterna: dado un numero n, sumos los digitos, variando su signo. El primero es positivo, el segundo negativo y asi --
 -- y empezando por el digito de las unidades. --
 
-sumados :: Int -> Int
-sumados n | n > 0 && n < 10 = n
-          | n >= 10 = mod n 10 - sumados (div (n-1) 10)
-          | otherwise = 0
+sumaAlterna :: Int -> Int
+sumaAlterna n | n > 0 && n < 10 = n
+              | n >= 10 = mod n 10 - sumaAlterna (div n 10)
+              | otherwise = 0
 
 digitosIguales :: Int -> Bool
 digitosIguales n | (sumados n == (mod n 10) || sumados n == 0) = True
